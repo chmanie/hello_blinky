@@ -31,7 +31,7 @@ defmodule HelloBlinky.Application do
     # Supervisor.start_link(children, opts)
 
     
-    led_list = Application.get_env(:blinky, :led_list)
+    led_list = Application.get_env(:hello_blinky, :led_list)
     Logger.debug "list of leds to blink is #{inspect led_list}"
     spawn fn -> blink_list_forever(led_list) end
     {:ok, self()}
